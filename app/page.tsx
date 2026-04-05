@@ -25,13 +25,17 @@ export default function Home() {
   const [selectorOpen, setSelectorOpen] = useState(false);
   const [selectorTab, setSelectorTab] = useState<"models" | "agents" | "providers">("models");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [localInput, setLocalInput] = useState("");
 
-  const { messages, input, setInput, handleSubmit, isLoading, setMessages } = useChat({
+  const { messages, input: chatInput, setInput, handleSubmit, isLoading, setMessages } = useChat({
     body: {
       model: selectedModel,
       agent: selectedAgent,
     },
   });
+
+  // Use local input state as fallback if useChat input is undefined
+  const inputValue = localInput || chatInput || "";
 
   useEffect(() => {
     setTimeout(() => setMounted(true), 100);
@@ -52,11 +56,15 @@ export default function Home() {
   const handleNewChat = () => {
     setMessages([]);
     setInput("");
+    setLocalInput("");
   };
 
   const onSend = () => {
-    if (input.trim() && !isLoading) {
+    const trimmedInput = inputValue.trim();
+    if (trimmedInput && !isLoading) {
+      setInput(trimmedInput);
       handleSubmit();
+      setLocalInput("");
     }
   };
 
@@ -192,8 +200,8 @@ export default function Home() {
           style={{ transitionDelay: "0.4s" }}
         >
           <ChatInput
-            value={input}
-            onChange={setInput}
+            value={inputValue}
+            onChange={setLocalInput}
             onSend={onSend}
             isLoading={isLoading}
             selectedModel={selectedModel}
