@@ -57,3 +57,8 @@ task/artifacts/*
 task/reports/*.md
 !task/reports/.gitkeep
 .aider*
+
+# 13. Next.js specific
+.next/
+out/
+.turbo/

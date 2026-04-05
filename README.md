@@ -350,6 +350,59 @@ MIT © [vava](https://github.com/vava-nessa)
 
 
 
+---
+
+## 🚀 نظام دردشة الوكلاء الذكية
+
+يوفر هذا المشروع نسخة ويب متقدمة من أداة free-coding-models مع واجهة دردشة متكاملة.
+
+### البدء السريع
+
+```bash
+# تثبيت المتطلبات
+npm install
+
+# تشغيل خادم التطويير
+npm run dev
+```
+
+التطبيق سيكون متاحاً على: **`http://localhost:3000`**
+
+### الميزات الجديدة
+
+- 🤖 **8 وكلاء متخصصين** - Code Generator, Debugger, Code Reviewer, وأكثر
+- 💬 **واجهة دردشة متقدمة** - تفاعلية مع streaming responses
+- 📊 **متصفح نماذج ذكي** - تصفية حسب المزود والمستوى والأداء
+- ⚡ **دعم Groq** - تكامل مباشر مع أسرع النماذج
+- 🌓 **وضع ليلي/نهاري** - تصميم متجاوب وأنيق
+- 📈 **معلومات الأداء** - سعر، السياق، والاستقرار
+
+### المتغيرات البيئية (اختيارية)
+
+```bash
+# اختياري - للحصول على نتائج حية من Groq
+GROQ_API_KEY=your_api_key_here
+```
+
+### البنية
+
+```
+app/
+  ├── page.tsx              # الصفحة الرئيسية
+  ├── layout.tsx            # التخطيط
+  ├── globals.css           # الأنماط
+  └── api/chat/route.ts     # API للمحادثة
+  
+components/
+  ├── chat-input.tsx        # مدخل الرسالة
+  ├── chat-messages.tsx     # عرض الرسائل
+  └── selector-panel.tsx    # لوحة الاختيار
+
+lib/
+  ├── models.ts             # 40+ نموذج AI
+  └── agents.ts             # 8 وكلاء متخصصين
+```
+
 <p align="center">
-  <sub>Anonymous usage data collected to improve the tool. No personal information ever.</sub>
+  <sub>Built with ❤️ using Next.js 15, Tailwind CSS & Groq AI</sub>
 </p>
