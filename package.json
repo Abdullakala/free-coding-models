@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/groq": "^1.0.0",
     "@ai-sdk/react": "^3.0.148",
     "ai": "^6.0.0",
     "class-variance-authority": "^0.7.0",

@@ -1,9 +1,4 @@
 import { streamText } from "ai";
-import { createGroq } from "@ai-sdk/groq";
-
-const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY,
-});
 
 export async function POST(req: Request) {
   const { messages, model, agent } = await req.json();
@@ -17,10 +12,11 @@ export async function POST(req: Request) {
   }
 
   // Use the model's API ID or default to llama
-  const modelId = model?.apiId || "llama-3.3-70b-versatile";
+  const modelId = model?.apiId || "groq/llama-3.3-70b-versatile";
 
+  // Use Vercel AI Gateway (zero-config) instead of direct Groq SDK
   const result = streamText({
-    model: groq(modelId),
+    model: modelId,
     system: systemPrompt,
     messages,
   });
