@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --color-background: hsl(240 6% 3%);
+  --color-foreground: hsl(0 0% 98%);
+  --color-primary: hsl(120 90% 65%);
+  --color-secondary: hsl(240 5% 12%);
+  --color-muted: hsl(240 5% 18%);
+  --color-muted-foreground: hsl(240 5% 65%);
+  --color-border: hsl(240 5% 12%);
+}
+
 :root {
   --background: 240 6% 3%;
   --foreground: 0 0% 98%;
