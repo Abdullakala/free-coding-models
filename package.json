@@ -1,66 +1,30 @@
 {
-  "name": "free-coding-models",
-  "version": "0.3.33",
-  "description": "Find the fastest coding LLM models in seconds — ping free models from multiple providers, pick the best one for OpenCode, Cursor, or any AI coding assistant.",
-  "keywords": [
-    "nvidia",
-    "nim",
-    "llm",
-    "cli",
-    "ai",
-    "models",
-    "benchmark",
-    "latency",
-    "availability",
-    "deepseek",
-    "qwen",
-    "llama",
-    "mistral",
-    "glm",
-    "kimi",
-    "gpt",
-    "chatgpt",
-    "openai",
-    "api"
-  ],
-  "homepage": "https://github.com/vava-nessa/free-coding-models#readme",
-  "bugs": {
-    "url": "https://github.com/vava-nessa/free-coding-models/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vava-nessa/free-coding-models.git"
-  },
-  "license": "MIT",
-  "author": "vava",
-  "type": "module",
-  "main": "bin/free-coding-models.js",
-  "bin": {
-    "free-coding-models": "./bin/free-coding-models.js"
-  },
-  "files": [
-    "bin/",
-    "src/",
-    "sources.js",
-    "patch-openclaw.js",
-    "patch-openclaw-models.js",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md"
-  ],
+  "name": "ai-agents-chat",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "node bin/free-coding-models.js",
-    "test": "node --test test/test.js",
-    "test:fcm": "node scripts/testfcm-runner.mjs",
-    "test:fcm:mock": "node scripts/testfcm-runner.mjs --tool crush --tool-bin-dir test/fixtures/mock-bin"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "chalk": "^5.4.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@ai-sdk/groq": "^1.0.0",
+    "@ai-sdk/react": "^3.0.148",
+    "ai": "^6.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.513.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
-    "@mariozechner/terminalcp": "^1.3.3"
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.0.0"
   }
 }
